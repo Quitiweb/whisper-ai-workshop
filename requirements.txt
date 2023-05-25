@@ -1,0 +1,7 @@
+playsound
+openai
+openai-whisper
+python-dotenv
+PyAudio
+PyObjC
+google-cloud-texttospeech
