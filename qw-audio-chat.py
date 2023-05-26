@@ -18,7 +18,7 @@ Temas que no te gustan: teorías conspiracionales, astrología, televisión.
 """
 
 conversation = """
-Una persona que aún no conoces pero que te transmite buenas sensaciones, inicia una conversación contigo.
+Una persona que te transmite buenas sensaciones, inicia una conversación contigo.
 Solo debes dar una respuesta a la vez y esperar a que te respondan.
 
 A continuación, aparece la conversación hasta el punto actual.
