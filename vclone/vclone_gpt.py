@@ -2,7 +2,8 @@ import os
 import openai
 import tempfile
 from dotenv import load_dotenv
-from elevenlabs import play
+# from elevenlabs import play
+from playsound import playsound
 
 
 load_dotenv()
@@ -73,7 +74,8 @@ def continuous_interaction():
         if prompt.lower() == 'exit':
             break
         audio_file = interact_with_gpt4(prompt)
-        play(audio_file, notebook=True)
+        # play(audio_file, notebook=True)
+        playsound(audio_file)
 
 
 # Example usage
