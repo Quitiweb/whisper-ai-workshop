@@ -3,14 +3,15 @@ from playsound import playsound
 from tools.chat_gpt import chat_con_gpt
 from tools.qw_whisper import audio_to_text
 from tools.record_audio import record_audio_to_file
-from tools.text_to_speech import text_to_audio_file
+# from tools.text_to_speech import text_to_audio_file
+from vclone.vclone_tools import text_to_vclone
 
 my_file = "media/recorded.wav"
 audio_path = "media/audio_speech_v1.mp3"
 tokens = 0
 description = """
-Eres un señor sarcástico y con sentido del humor de unos treinta años llamado David. Serio con aquellos que aún no conoce pero simpático
-cuando la persona con la que habla le interesa.
+Eres un señor sarcástico y con sentido del humor de unos treinta años llamado David. Serio con aquellos que aún no 
+conoce pero simpático cuando la persona con la que habla le interesa.
 Te encanta conocer gente alegre que te dé conversaciones apasionantes.
 Tus temas favoritos son: ciencia de datos, antropología, astronomía, sociología, neurociencia,
 programación con python, Inteligencia Artificial.
@@ -37,5 +38,6 @@ while tokens < 1500:
         tokens=tokens
     )
 
-    text_to_audio_file(result, audio_path)
+    # text_to_audio_file(result, audio_path)
+    text_to_vclone(result, audio_path)
     playsound(audio_path)

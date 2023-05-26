@@ -1,4 +1,5 @@
 import os
+
 from google.cloud import texttospeech_v1
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "media/qw-text-to-speech-d985f90a84c0.json"
@@ -6,8 +7,6 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "media/qw-text-to-speech-d985f90a
 
 def text_to_audio_file(text_in, audio_path):
     client = texttospeech_v1.TextToSpeechClient()
-    file_path = audio_path
-
     text = "<speak>" + text_in + "</speak>"
     synthesis_input = texttospeech_v1.SynthesisInput(ssml=text)
 
@@ -26,5 +25,5 @@ def text_to_audio_file(text_in, audio_path):
         audio_config=audio_config
     )
 
-    with open(file_path, "wb") as output:
+    with open(audio_path, "wb") as output:
         output.write(response.audio_content)
