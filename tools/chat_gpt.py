@@ -37,6 +37,7 @@ def chat_con_gpt(mensaje, conversation, description, tokens):
             error = True
             ntries += 1
             print("Error de openai: {}".format(e))
+            print()
             for i in range(5, -1, -1):
                 print("Reintentando en: {}".format(i))
                 time.sleep(1)
