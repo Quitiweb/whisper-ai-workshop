@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 from elevenlabs import set_api_key, voices
 
 load_dotenv()
-selected_voice_id = "pXDnAz7gm0GsClj10mZU"
+selected_voice_id = "pqHfZKP75CvOlQylNhV4"
 eleven_api_key = os.getenv("ELEVEN_API_KEY")
 
 
@@ -46,3 +46,10 @@ def print_my_voices():
 # voice_id = "eVJv3Q6mPjY246dFTov0" (br0dar)
 # voice_id = "pXDnAz7gm0GsClj10mZU" (rafael)
 # voice_category = "cloned"
+# print_my_voices()
+
+"""
+pqHfZKP75CvOlQylNhV4
+Bill
+premade
+"""

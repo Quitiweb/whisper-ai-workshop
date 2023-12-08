@@ -14,6 +14,12 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 # print(openai.Model.list())
 
 
+def get_openai_models():
+    res = openai.Model.list()
+    for r in res.data:
+        print(r.id)
+
+
 def chat_con_gpt(mensaje, conversation, description, tokens):
     retries = 5
     print()
