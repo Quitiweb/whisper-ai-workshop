@@ -8,8 +8,10 @@ from openai.error import RateLimitError
 
 load_dotenv()
 
-# openai.organization = "CSW"
+# openai.organization = "Quitiweb LTD"
 openai.api_key = os.getenv("OPENAI_API_KEY")
+# GPT_MODEL = "gpt-4"
+GPT_MODEL = "gpt-4-turbo"
 
 # print(openai.Model.list())
 
@@ -32,7 +34,7 @@ def chat_con_gpt(mensaje, conversation, description, tokens):
     while (ntries < retries) and error:
         try:
             response = openai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
+                model=GPT_MODEL,
                 messages=[
                     {"role": "system", "content": description},
                     {"role": "user", "content": conversation},
