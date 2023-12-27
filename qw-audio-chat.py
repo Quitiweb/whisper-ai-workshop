@@ -3,7 +3,6 @@ from playsound import playsound
 from tools.chat_gpt import chat_con_gpt
 from tools.qw_whisper import audio_to_text
 from tools.record_audio import record_audio_to_file
-# from tools.text_to_speech import text_to_audio_file
 from vclone.vclone_tools import text_to_vclone
 
 my_file = "media/recorded.wav"
@@ -38,6 +37,5 @@ while tokens < 1500:
         tokens=tokens
     )
 
-    # text_to_audio_file(result, audio_path)
     text_to_vclone(result, audio_path)
     playsound(audio_path)

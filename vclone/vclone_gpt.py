@@ -14,9 +14,11 @@ audio_path = "audio_vclone_v1.mp3"
 chatgpt_model = "gpt-3.5-turbo"
 chatgpt_system = "You are a helpful assistant on a conversation. Answer should be not too long. Be ironic and acid"
 
+client = openai.Client()
+
 
 def get_gpt_response(prompt):
-    response = openai.ChatCompletion.create(
+    response = client.chat.completions.create(
         model=chatgpt_model,
         messages=[
             {"role": "system", "content": chatgpt_system},

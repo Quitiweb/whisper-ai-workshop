@@ -43,6 +43,7 @@ def print_my_voices():
         print(v.name)
         print(v.category)
 
+
 # voice_id = "eVJv3Q6mPjY246dFTov0" (br0dar)
 # voice_id = "pXDnAz7gm0GsClj10mZU" (rafael)
 # voice_category = "cloned"

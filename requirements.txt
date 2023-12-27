@@ -1,8 +1,8 @@
 playsound
-openai
-openai-whisper
+openai>=1.6.1
+openai-whisper>=20231117
 python-dotenv
 PyAudio
 PyObjC
-google-cloud-texttospeech
-elevenlabs
+elevenlabs>=0.2.27
+# google-cloud-texttospeech

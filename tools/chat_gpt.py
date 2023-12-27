@@ -4,16 +4,16 @@ from urllib.error import HTTPError
 
 import openai
 from dotenv import load_dotenv
-from openai.error import RateLimitError
+from openai._exceptions import RateLimitError
 
 load_dotenv()
 
-# openai.organization = "Quitiweb LTD"
 openai.api_key = os.getenv("OPENAI_API_KEY")
 # GPT_MODEL = "gpt-4"
-GPT_MODEL = "gpt-4-turbo"
+# GPT_MODEL = "gpt-4-32k"
+GPT_MODEL = "gpt-4-1106-preview"
 
-# print(openai.Model.list())
+client = openai.OpenAI()
 
 
 def get_openai_models():
@@ -33,7 +33,7 @@ def chat_con_gpt(mensaje, conversation, description, tokens):
     error = True
     while (ntries < retries) and error:
         try:
-            response = openai.ChatCompletion.create(
+            response = client.chat.completions.create(
                 model=GPT_MODEL,
                 messages=[
                     {"role": "system", "content": description},
@@ -56,6 +56,6 @@ def chat_con_gpt(mensaje, conversation, description, tokens):
 
     conversation += result + "\nPersona: "
 
-    tokens = response["usage"]["total_tokens"]
+    tokens = response.usage.total_tokens
 
     return result, conversation, tokens
